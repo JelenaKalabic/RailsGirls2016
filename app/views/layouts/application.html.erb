@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ideas</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
+  <%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  
+<style>
+ .bottomPage {
+	 color: red;
+	 position: absolute;
+	 bottom: 0	 
+ }
+ 
+ .center {
+	text-align: center;
+	padding-top: 20%
+ }
+</style>
+</head>
+<body>
+
+<div class="container">
+<% if user_signed_in? %>
+	<h1 align="center"> Our ideas </h1>
+	<p align="right"><%= link_to('Logout', destroy_user_session_path, :method => :delete) %> </p>
+
+<% end %>
+
+
+
+
+ <%= yield %>
+
+</div>
+
+<footer class="bottomPage">
+ <div class="container">
+   Rails Girls 2016
+ </div>
+</footer>
+
+</body>
+</html>

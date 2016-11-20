@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+
+<table class="table table-bordered">
+  <thead>
+  </thead>
+
+  <tbody>
+      <tr>
+		<td> <strong>Name:</strong> </td>
+        <td><%= @idea.name %></td>
+	</tr>
+	<tr>
+		<td><strong>Description:</strong></td>
+        <td><%= @idea.description %></td>
+	</tr>
+	<tr>
+	<td><strong>Picture:</strong></td>
+	<td><%= image_tag(@idea.picture_url, width: 100) if @idea.picture.present? %></td>
+	</tr>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_idea_path(@idea) %> |
+<%= link_to 'Back', ideas_path %>
